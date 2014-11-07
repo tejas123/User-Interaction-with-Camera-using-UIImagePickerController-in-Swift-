@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.11" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6190.4"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImagePickerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y93-UC-Dy8">
+                                <rect key="frame" x="150" y="497" width="300" height="59"/>
+                                <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="PRq-no-Etl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Choose Image">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnImagePickerClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Gr-eo-NnA"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sO8-9q-IBG">
+                                <rect key="frame" x="150" y="117" width="300" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ImagePicker Demo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPG-7c-W9X">
+                                <rect key="frame" x="150" y="36" width="300" height="39"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="y93-UC-Dy8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="3OR-nc-0lI"/>
+                            <constraint firstItem="sO8-9q-IBG" firstAttribute="top" secondItem="XPG-7c-W9X" secondAttribute="bottom" constant="30" id="UBX-rj-HVq"/>
+                            <constraint firstAttribute="trailing" secondItem="XPG-7c-W9X" secondAttribute="trailing" constant="80" id="Umd-vv-3gF"/>
+                            <constraint firstItem="XPG-7c-W9X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="80" id="WLb-ND-nPg"/>
+                            <constraint firstAttribute="trailing" secondItem="sO8-9q-IBG" secondAttribute="trailing" constant="20" id="Y9r-wU-3We"/>
+                            <constraint firstItem="sO8-9q-IBG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="cOG-Hh-Etb"/>
+                            <constraint firstItem="sO8-9q-IBG" firstAttribute="top" secondItem="XPG-7c-W9X" secondAttribute="bottom" constant="30" id="jud-kQ-Au3"/>
+                            <constraint firstItem="XPG-7c-W9X" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="kx7-sU-tHB"/>
+                            <constraint firstItem="y93-UC-Dy8" firstAttribute="top" secondItem="sO8-9q-IBG" secondAttribute="bottom" constant="30" id="nyI-E9-Jln"/>
+                            <constraint firstItem="y93-UC-Dy8" firstAttribute="top" secondItem="sO8-9q-IBG" secondAttribute="bottom" constant="30" id="oo6-hR-dJL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="y93-UC-Dy8" secondAttribute="bottom" constant="40" id="ooo-ok-Gn0"/>
+                            <constraint firstAttribute="trailing" secondItem="y93-UC-Dy8" secondAttribute="trailing" constant="50" id="pxe-DY-UoU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnClickMe" destination="y93-UC-Dy8" id="tVd-mp-TJL"/>
+                        <outlet property="imageView" destination="sO8-9q-IBG" id="ePc-Yc-xYd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
