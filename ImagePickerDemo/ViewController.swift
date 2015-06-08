@@ -49,6 +49,7 @@ class ViewController: UIViewController,UIAlertViewDelegate,UIImagePickerControll
         }
 
         // Add the actions
+        picker?.delegate = self
         alert.addAction(cameraAction)
         alert.addAction(gallaryAction)
         alert.addAction(cancelAction)
@@ -68,7 +69,7 @@ class ViewController: UIViewController,UIAlertViewDelegate,UIImagePickerControll
         if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera))
         {
             picker!.sourceType = UIImagePickerControllerSourceType.Camera
-            self .presentViewController(picker, animated: true, completion: nil)
+            self .presentViewController(picker!, animated: true, completion: nil)
         }
         else
         {
@@ -80,20 +81,20 @@ class ViewController: UIViewController,UIAlertViewDelegate,UIImagePickerControll
         picker!.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone
         {
-            self.presentViewController(picker, animated: true, completion: nil)
+            self.presentViewController(picker!, animated: true, completion: nil)
         }
         else
         {
-            popover=UIPopoverController(contentViewController: picker)
+            popover=UIPopoverController(contentViewController: picker!)
             popover!.presentPopoverFromRect(btnClickMe.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
         }
     }
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!)
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
     {
         picker .dismissViewControllerAnimated(true, completion: nil)
-        imageView.image=info[UIImagePickerControllerOriginalImage] as UIImage
+        imageView.image=info[UIImagePickerControllerOriginalImage] as? UIImage
     }
-    func imagePickerControllerDidCancel(picker: UIImagePickerController!)
+    func imagePickerControllerDidCancel(picker: UIImagePickerController)
     {
         println("picker cancel.")
     }
