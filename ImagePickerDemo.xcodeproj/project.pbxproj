@@ -156,6 +156,8 @@
 		EA6CC3A219935BA000834E65 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "TheAppGuruz-New-6";
 				TargetAttributes = {

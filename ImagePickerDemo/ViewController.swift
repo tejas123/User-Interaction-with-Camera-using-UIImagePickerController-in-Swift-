@@ -29,20 +29,20 @@ class ViewController: UIViewController,UIAlertViewDelegate,UIImagePickerControll
 
     @IBAction func btnImagePickerClicked(sender: AnyObject)
     {
-        var alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
 
-        var cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default)
+        let cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default)
         {
             UIAlertAction in
             self.openCamera()
             
         }
-        var gallaryAction = UIAlertAction(title: "Gallary", style: UIAlertActionStyle.Default)
+        let gallaryAction = UIAlertAction(title: "Gallary", style: UIAlertActionStyle.Default)
         {
             UIAlertAction in
             self.openGallary()
         }
-        var cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel)
         {
             UIAlertAction in
             
@@ -89,14 +89,14 @@ class ViewController: UIViewController,UIAlertViewDelegate,UIImagePickerControll
             popover!.presentPopoverFromRect(btnClickMe.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
         }
     }
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
     {
         picker .dismissViewControllerAnimated(true, completion: nil)
         imageView.image=info[UIImagePickerControllerOriginalImage] as? UIImage
     }
     func imagePickerControllerDidCancel(picker: UIImagePickerController)
     {
-        println("picker cancel.")
+        print("picker cancel.")
     }
     
     
